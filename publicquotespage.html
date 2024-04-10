@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes</title>
+    <!-- Include your CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+   
+    <!-- Quote submission form -->
+    <div class="quote-form">
+        <input type="text" id="quote" placeholder="Enter your quote">
+        <button id="submit-quote">Submit Quote</button>
+    </div>
+
+    <!-- Container for displaying quotes -->
+    <div id="quote-container">
+        <!-- Existing quotes will be displayed here -->
+    </div>
+
+    <!-- JavaScript code to handle quote submission and display -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('submit-quote').addEventListener('click', function() {
+                var quote = document.getElementById('quote').value;
+
+                if (quote) {
+                    var newQuote = document.createElement('div');
+                    newQuote.classList.add('quote');
+                    newQuote.textContent = quote;
+
+                    document.getElementById('quote-container').appendChild(newQuote);
+
+                    document.getElementById('quote').value = '';
+                } else {
+                    alert('Please enter a quote.');
+                }
+            });
+        });
+    </script>
+        
+</body>
+</html>
